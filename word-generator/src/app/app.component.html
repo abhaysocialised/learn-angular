@@ -1,0 +1,24 @@
+<div class="container w-50 mt-5 text-center">
+  <div class="text-center display-4 m-3 text-white">
+    Name Limit: {{limit}}
+  </div>
+
+  <input type="range" min="{{min}}" max="{{max}}" value="{{ limit }}" class="slider form-control-range" (change)="handleSlideChange($event.target.value)" />
+
+  <div class="row">
+    <div class="col-12 col-md-6"><button class="btn btn-primary" (click)="generate()">Generate Names</button></div>
+    <div class="col-12 col-md-6"><button class="btn btn-primary" (click)="generateCountries()">Generate Countries</button></div>
+  </div>
+
+  <div *ngIf="words" class="card card-body">
+    <p class="display-5">
+      {{words}}
+    </p>
+  </div>
+
+  <div *ngIf="countriesNames" class="card card-body my-3">
+    <p class="display-5">
+      {{countriesNames}}
+    </p>
+  </div>
+</div>
